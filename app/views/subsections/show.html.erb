@@ -1,0 +1,13 @@
+<div class='container'>
+	<article>
+	  <header><h4><%= @subsection.heading %></h4></header>	
+
+	  <p><%= @subsection.content %></p>
+
+	  <p>
+	  	<%= link_to 'Edit Subsection', edit_section_subsection_path(@section, @subsection) %> | 
+	  	<%= link_to 'Delete Subsection', section_subsection_path(@section, @subsection), method: :delete, data: {confirm: 'Are you sure?'} %></p> 
+
+	  <p><%= link_to "Back to #{@section.title}", section_path(@section) %></p>
+	</article>
+</div>

@@ -1,0 +1,17 @@
+<div class='container'>
+	<h4>These are the subsections of <%= @section.title %>:</h4>
+
+	<div class='row'>
+		<% @subsections.each do |s| %>			
+			  <article class='col-md-12'>
+			    <header><h4><%= link_to s.heading, section_subsection_path(@section, s) %></h4></header>
+
+			    <p><%= s.content %></p>  
+			  </article>		  
+		<% end %>
+	</div>
+		
+	<!--<p><%= link_to 'New Subsection', new_section_subsection_path(@section) %></p>-->
+
+	<p><%= link_to "Back to #{ @section.title }", section_path(@section) %></p>
+</div>

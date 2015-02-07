@@ -1,0 +1,39 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-8'>
+			<div class='row'>		
+				<% @sections[0..1].to_a.each do |s| %>					  
+			  	<article class='col-sm-6'>
+			  		<p><%= image_for(s) %></p>	  		          
+					  <header><h4><%= link_to s.title, section_path(s) %></h4></header>			          
+					  <p><%= s.summary %></p>			 
+					  <small><%= link_to 'More...', section_path(s) %></small>
+					  <p></p>       
+					</article>							  
+				<% end %>
+			</div>
+
+			<div class='row'>	
+				<% @sections[2..3].to_a.each do |s| %>				
+				  <article class='col-sm-6'>
+			  		<p><%= image_for(s) %></p>	  		          
+					  <header><h4><%= link_to s.title, section_path(s) %></h4></header>			          
+					  <p><%= s.summary %></p>			 
+					  <small><%= link_to 'More...', section_path(s) %></small>
+					  <p></p>       
+					</article>	  	  
+				<% end %>
+			</div>		
+		</div>
+
+		<div class='col-md-3 col-md-offset-1'>
+			<%= render partial: 'shared/sidebar' %>
+		</div>
+
+		</div class="container">
+			<p><%= link_to 'Create New Section', new_section_path %></p>
+		</div>	
+	</div>
+</div>
+
+

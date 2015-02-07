@@ -1,0 +1,51 @@
+<div class='container'>
+	<article>
+	  <div class='row'>
+			<p class='col-md-6'><%= @section.summary %></p>
+		</div>
+
+		<div class='row'>			
+			<% @subsections[0..1].to_a.each do |s| %>							
+			  <article class='col-md-6'>
+			  	<p><%= image_for(s) %></p>				  				  	
+			    <header><h4><%= link_to s.heading, section_subsection_path(@section, s) %></h4></header>					
+			    <p><%= s.content %></p>
+			    <small><%= link_to 'Back', sections_path %></small>
+				  <p></p>  
+			  </article>			  
+			<% end %>
+		</div>
+
+		<div class='row'>
+			<% @subsections[2..3].to_a.each do |s| %>		
+			  			
+			  <article class='col-md-6'>
+			  	<p><%= image_for(s) %></p>				  				  	
+			    <header><h4><%= link_to s.heading, section_subsection_path(@section, s) %></h4></header>					
+			    <p><%= s.content %></p>
+			    <small><%= link_to 'Back', sections_path %></small>
+				  <p></p>  
+			  </article>		  
+			<% end %>
+		</div>
+
+		<div class='row'>
+			<% @subsections[4..5].to_a.each do |s| %>			
+				<article class='col-md-6'>
+			  	<p><%= image_for(s) %></p>				  				  	
+			    <header><h4><%= link_to s.heading, section_subsection_path(@section, s) %></h4></header>					
+			    <p><%= s.content %></p>
+			    <small><%= link_to 'Back', sections_path %></small>
+				  <p></p>  
+			  </article>		  
+			<% end %>
+		</div>
+
+	  <p><%= link_to 'New Subsection', new_section_subsection_path(@section) %></p>		
+		
+		<p>
+			<%= link_to 'Edit Section', edit_section_path(@section) %> | 
+			<%= link_to 'Delete Section', section_path(@section), method: :delete, data: {confirm: 'Are you sure?'} %>
+		</p>		
+	</article>
+</div>

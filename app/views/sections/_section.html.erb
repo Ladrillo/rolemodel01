@@ -1,0 +1,7 @@
+<article class='col-md-4'>          
+  <header><h4><%= link_to s.title, section_path(s) %></h4></header>
+  <p><%= image_for(s) %></p>        
+  <p><%= s.summary %></p>
+  <%= link_to 'More...', section_path(s), class:"btn btn-default btn-xs" %> 
+  <p></p>       
+</article>
